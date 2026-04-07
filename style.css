@@ -1,0 +1,204 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f3d3e, #1b4f4f, #3b9b9b);
+    color: #ffffff;
+    line-height: 1.4;
+    min-height: 100vh;
+    font-size: 1.4rem; /* Aumentar tamaño de fuente base */
+}
+
+/* Contenedor y encabezado */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 3.5rem; /* Aumentar tamaño de fuente */
+    background: linear-gradient(45deg, #00FFCC, #00FF66, #0099FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+header p {
+    font-size: 1.5rem; /* Aumentar tamaño de fuente */
+    color: #66CCCC;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+#xlsxFile {
+    padding: 15px 25px;
+    border: 2px solid #66CCCC;
+    border-radius: 8px;
+    background: #222;
+    font-size: 1.4rem;
+    color: #fff;
+}
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem; /* Aumentar tamaño de fuente */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#loadBtn {
+    background: linear-gradient(45deg, #00FF66, #66FFCC);
+    color: #fff;
+}
+#loadBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,255,102,0.4);
+}
+#downloadTemplateBtn {
+    background: linear-gradient(45deg, #0099FF, #66CCFF);
+    color: #fff;
+}
+#downloadTemplateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,153,255,0.4);
+}
+.status {
+    text-align: center;
+    font-size: 1.5rem; /* Aumentar tamaño de fuente */
+    font-weight: bold;
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+.status.balanced {
+    color: #00FF66;
+}
+.status.unbalanced {
+    color: #FF3333;
+}
+
+/* Tabla y visualización mejorada */
+.balance-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+.column {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+.column h2 {
+    font-size: 2.2rem; /* Aumentar tamaño de fuente */
+    color: #00FFCC;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #66CCCC;
+    padding-bottom: 10px;
+}
+
+/* Estilo para las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+th {
+    background: linear-gradient(45deg, #66CCCC, #00FFCC);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Arial Black', 'Arial Bold', sans-serif;
+    font-size: 1.2rem; /* Aumentar tamaño de fuente */
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.2);
+}
+tr:nth-child(even) {
+    background: rgba(0,255,204,0.2);
+}
+tr:hover {
+    background: rgba(0,255,255,0.2);
+}
+
+/* Otros estilos para encabezados internos y subtotal si los deseas destacar */
+.section-header {
+    font-weight: bold;
+    background: linear-gradient(90deg, #4ea7a7, #4ea7a7);
+    border-left: 5px solid #00FF66;
+    padding-left: 20px !important;
+}
+/* Asegúrate que "Non-Current Assets Subtotal" y "Current Assets Subtotal" tengan el mismo color (esto ya está correcto con `.subtotal`) */
+
+.subtotal {
+    background: linear-gradient(90deg, #66FF66, #99FF99);
+}
+
+
+
+}
+.green-subtotal {
+    background: rgba(255, 119, 0, 0.9) !important;
+    color: white !important;
+}
+.equity-total {
+    background: rgba(0, 191, 255, 0.9) !important;
+    color: white !important;
+}
+/* Para que "Total Assets" tenga el mismo color que "Total Equity" */
+.total {
+    background: rgba(0, 191, 255, 0.9); /* Color azul claro similar a `.equity-total` */
+    color: white !important;
+}
+tfoot td {
+    font-weight: bold;
+    font-size: 1.3rem; /* Aumentar tamaño de fuente */
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .balance-sheet {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .column {
+        padding: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    #xlsxFile, button {
+        width: 100%;
+        max-width: 300px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+}

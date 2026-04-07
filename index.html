@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balance Sheet</title>
+    <!-- Asegúrate de enlazar el CSS actualizado -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="controls">
+    <input type="file" id="xlsxFile" accept=".xlsx" />
+    <button id="loadBtn">Load Balance Sheet</button>
+    <!-- Botón "Download Template" -->
+    <button id="downloadTemplateBtn" style="background: linear-gradient(45deg, #7f4caf, #7f4caf);">Download Template</button>
+    <button id="ratiosBtn" style="background: linear-gradient(45deg, #FF8C00, #FFA500);">Calculate Ratios</button>
+</div>
+
+<div id="balanceStatus" class="status"></div>
+
+<div class="balance-sheet">
+    <div class="column left">
+        <h2>Assets</h2>
+        <table id="assetsTable">
+            <thead>
+                <tr>
+                    <th>Account</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td>Total Assets</td>
+                    <td id="totalAssets">$0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <div class="column right">
+        <h2>Liabilities &amp; Equity</h2>
+        <table id="liabsTable">
+            <thead>
+                <tr>
+                    <th>Account</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td>Total Liabilities + Equity</td>
+                    <td id="totalLiabs">$0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- Incluye tu archivo JavaScript -->
+<script src="javascript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</body>
+</html>
